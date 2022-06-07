@@ -2,8 +2,8 @@ footer {
   padding: 20px 0;
   color: white;
   text-align: center;
-  font-size: 9px;
-  font-weight: 500;
+  font-size: 13px;
+  font-weight: 300;
 }
 footer span {
   font-weight: 700;
@@ -15,6 +15,12 @@ footer a {
   color: inherit;
   margin-bottom: 3px;
   border-bottom: 0.05rem solid rgba(220, 220, 220, 0.5);
+}
+
+@media screen and (max-width: 560) {
+  footer {
+    font-size: 9px !important;
+  }
 }
 
 /*# sourceMappingURL=footer.css.map */
