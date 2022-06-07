@@ -1,0 +1,20 @@
+footer {
+  padding: 20px 0;
+  color: white;
+  text-align: center;
+  font-size: 9px;
+  font-weight: 500;
+}
+footer span {
+  font-weight: 700;
+  color: #fdf;
+  cursor: pointer;
+}
+footer a {
+  text-decoration: none;
+  color: inherit;
+  margin-bottom: 3px;
+  border-bottom: 0.05rem solid rgba(220, 220, 220, 0.5);
+}
+
+/*# sourceMappingURL=footer.css.map */

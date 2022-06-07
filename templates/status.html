@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block title %} status {% endblock %}
+
+{% block header %}
+    <link rel="stylesheet" href="/static/css/status.css">
+{% endblock %}
+
+{% set ns = namespace(all_status=True) %}
+{% for k, v in status.items() -%}
+    {{ v }}
+    {% if v == 0 %}
+        {% set ns.all_status = False %}
+    {%- endif %}
+{% endfor %}
+
+{% block content %}
+
+<div class="status-header">
+    <div class="status-header-title _{{ '200' if ns.all_status else '0' }}-bg">
+        {{ 'All Systems Operational' if ns.all_status else 'Bad news' }}
+    </div>
+    
+    <div class="status-header-res">
+        {{ 'It seems like everything is working as expected!' if ns.all_status else 'It seems like something gone wrong.' }}
+    </div>
+</div>
+
+{% for _name, _status in status.items() %}
+    <div class="status-item">
+        <div class="item-header">
+            <div class="item-header-title">
+                {{ _name }}
+            </div>
+            
+            <div class="uf-res">
+                <img src="/static/assets/ico/{{ _status }}.ico">
+                
+                <span class="_{{ _status }}">{{ "Operational" if _status else "Bad" }}</span>
+            </div>
+        </div>
+        
+        <div class="item-graph">
+            There should be graph display but..
+        </div>
+        
+        <div class="status-code-bl">
+            <div class="left _{{ _status }}">
+                {{ 'Work`s fine!' if _status else 'Some troubles.' }}
+            </div>
+            
+            <div class="right">
+                status code: <span class="_{{ _status }}">{{ _status }}</span>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+
+{% endblock %}

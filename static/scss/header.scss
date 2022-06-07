@@ -1,0 +1,47 @@
+@import '_variables';
+
+header {
+    position: relative;
+    z-index: 1;
+    height: 280px;
+    border-bottom: .2rem solid #fcf;
+    
+    background-image: -webkit-gradient(linear,left top,left bottom,from(rgba(0,0,0,.2)),to(rgba(0,0,0,.2))),url('/static/assets/header-bg.jpg')!important;
+    background-image: linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.2)),url('/static/assets/header-bg.jpg')!important;
+    background-position: 50%;
+    background-size: cover;
+    
+    &::after {
+        content: "";
+        position: absolute;
+        z-index: 2;
+        left: 0; top: 0;
+        width: 100%; height: 100%;
+        background: rgba(0, 0, 20, .2);
+    }
+    
+    .content {
+        padding: 20px 30px;
+        z-index: 3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        & .title {
+            display: flex;
+            align-items: center;
+            
+            & img {
+                height: 180px;
+                filter: drop-shadow(0 0 13px #222);
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 540px) {
+    header {
+        height: 220px;
+    }
+}

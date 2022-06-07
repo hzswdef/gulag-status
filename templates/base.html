@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/header.css">
+    <link rel="stylesheet" href="/static/css/footer.css">
+    
+    <title>{{ app_name() }} - {% block title %}{% endblock %}</title>
+    
+    {% block header %}{% endblock %}
+</head>
+<body>
+    <header>
+        <div class="content">
+            {% include 'components/header.html' %}
+        </div>
+    </header>
+    
+    <div class="main">
+        <div class="content">
+            {% block content %} {% endblock %}
+        </div>
+    </div>
+    
+    <footer>
+        <div class="content">
+            {% include 'components/footer.html' %}
+        </div>
+    </footer>
+</body>
+</html>
