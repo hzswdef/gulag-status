@@ -24,5 +24,5 @@ def status():
     )
 
 if __name__ == "__main__":
-    app.run(debug=cfg.env.debug, port=800)
+    app.run(debug=cfg.env.debug, port=8000)
  
