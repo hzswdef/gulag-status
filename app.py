@@ -13,10 +13,6 @@ def app_name() -> str:
     return cfg.env.app_name
 
 @app.template_global()
-def domain() -> str:
-    return cfg.env.domain
-
-@app.template_global()
 def target() -> str:
     return cfg.env.target
 
@@ -28,5 +24,5 @@ def status():
     )
 
 if __name__ == "__main__":
-    app.run(debug=cfg.env.debug, port=8000)
+    app.run(debug=cfg.env.debug, port=800)
  
