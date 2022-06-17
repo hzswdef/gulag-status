@@ -39,7 +39,7 @@ nano .env
 
 # Run gulag-status (on port 8000).
 python3.9 app.py # Run directly to access debug features for development!
-hypercorn app.py # Please run guweb with hypercorn when in production! It will improve performance drastically by disabling all of the debug features a developer would need!
+hypercorn app.py # Please run gulag-status with hypercorn when in production! It will improve performance drastically by disabling all of the debug features a developer would need!
 ```
 
 ## Directory structure
